@@ -1,0 +1,13 @@
+{
+  "name": "A2X",
+  "owner": {
+    "name": "Tomer Hamam",
+    "email": "tomerhamam@gmail.com"
+  },
+  "metadata": {
+    "description": "my useful Claude code plugins such that I can install them on demand when I need them",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": []
+}
