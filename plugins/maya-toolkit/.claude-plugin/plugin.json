@@ -1,0 +1,111 @@
+{
+  "name": "maya-toolkit",
+  "displayName": "Maya AI Toolkit",
+  "version": "1.0.0",
+  "description": "Comprehensive toolkit for Maya AI development including task planning, PR review, documentation, and session management",
+  "author": {
+    "name": "Tomer Hamam",
+    "email": "tomerhamam@gmail.com"
+  },
+  "keywords": [
+    "maya",
+    "task-planning",
+    "documentation",
+    "pr-review",
+    "linear",
+    "session-management"
+  ],
+  "components": {
+    "agents": [
+      {
+        "name": "task-planner",
+        "path": "./agents/task-planner.md",
+        "description": "Autonomous task preparation agent with research, scoping, and Linear registration"
+      },
+      {
+        "name": "theia-pr-walkthrough",
+        "path": "./agents/theia-pr-walkthrough.md",
+        "description": "Generates navigational walkthroughs for Theia PR review tool"
+      },
+      {
+        "name": "documentation-specialist",
+        "path": "./agents/documentation-specialist.md",
+        "description": "Adds comprehensive documentation to codebases"
+      }
+    ],
+    "skills": [
+      {
+        "name": "prepare-task",
+        "path": "./skills/prepare-task.md",
+        "description": "Prepare and scope a new task with research, breakdown, and Linear registration"
+      },
+      {
+        "name": "session-handoff",
+        "path": "./skills/session-handoff.md",
+        "description": "Create comprehensive session handoff document"
+      },
+      {
+        "name": "session-resume",
+        "path": "./skills/session-resume.md",
+        "description": "Resume previous session from handoff document"
+      },
+      {
+        "name": "context-health",
+        "path": "./skills/context-health.md",
+        "description": "Check context health and suggest cleanup"
+      }
+    ],
+    "commands": [
+      {
+        "name": "create-theia-inputs",
+        "path": "./commands/create-theia-inputs.md",
+        "description": "Generate Theia walkthrough for current PR"
+      },
+      {
+        "name": "prepare-task",
+        "path": "./commands/prepare-task.md",
+        "description": "Prepare and scope a new task"
+      },
+      {
+        "name": "session-handoff",
+        "path": "./commands/session-handoff.md",
+        "description": "Create session handoff document"
+      },
+      {
+        "name": "session-resume",
+        "path": "./commands/session-resume.md",
+        "description": "Resume previous session"
+      },
+      {
+        "name": "context-health",
+        "path": "./commands/context-health.md",
+        "description": "Check context health"
+      }
+    ],
+    "templates": [
+      {
+        "name": "agent-template",
+        "path": "./templates/agent-template.md",
+        "description": "Template for creating new agents"
+      },
+      {
+        "name": "skill-template",
+        "path": "./templates/skill-template.md",
+        "description": "Template for creating new skills"
+      },
+      {
+        "name": "command-template",
+        "path": "./templates/command-template.md",
+        "description": "Template for creating new commands"
+      }
+    ]
+  },
+  "requirements": {
+    "linear": {
+      "description": "Linear API integration for task management",
+      "mcp": "https://mcp.linear.app/sse",
+      "env": ["LINEAR_API_KEY"]
+    }
+  },
+  "documentation": "./README.md"
+}

@@ -9,5 +9,12 @@
     "version": "1.0.0",
     "pluginRoot": "./plugins"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "maya-toolkit",
+      "source": "./plugins/maya-toolkit",
+      "version": "1.0.0",
+      "description": "Comprehensive Maya AI development toolkit with task planning, PR review, documentation, and session management"
+    }
+  ]
 }
