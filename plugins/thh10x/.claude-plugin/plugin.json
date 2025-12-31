@@ -1,0 +1,17 @@
+{
+  "name": "thh10x",
+  "version": "1.0.0",
+  "description": "Advanced terminal control and automation toolkit",
+  "author": {
+    "name": "Tomer Hamam",
+    "email": "tomerhamam@gmail.com"
+  },
+  "keywords": [
+    "terminal",
+    "automation",
+    "session-control",
+    "command-execution"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "mactools",
+  "version": "1.0.0",
+  "description": "macOS terminal automation with iTerm2 MCP server for command execution, session management, and collaborative debugging",
+  "author": {
+    "name": "Tomer Hamam",
+    "email": "tomerhamam@gmail.com"
+  },
+  "keywords": [
+    "iterm2",
+    "terminal",
+    "macos",
+    "automation",
+    "tmux",
+    "session-control",
+    "debugging"
+  ],
+  "mcpServers": "./mcp-config.json"
+}
