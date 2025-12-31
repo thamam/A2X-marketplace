@@ -23,18 +23,6 @@
       "description": "macOS terminal automation with iTerm2 MCP server for command execution, session management, and collaborative debugging"
     },
     {
-      "name": "thh10x",
-      "source": "./plugins/thh10x",
-      "version": "1.0.0",
-      "description": "Advanced terminal control and automation toolkit"
-    },
-    {
-      "name": "iterm2-control",
-      "source": "./plugins/iterm2-control",
-      "version": "1.0.0",
-      "description": "Bidirectional iTerm2 terminal control with user handoff via tmux"
-    },
-    {
       "name": "claude-memory",
       "source": "./plugins/claude-memory",
       "version": "1.0.0",

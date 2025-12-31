@@ -13,8 +13,5 @@
     "pr-review",
     "linear",
     "session-management"
-  ],
-  "agents": "./agents/",
-  "skills": "./skills/",
-  "commands": "./commands/"
+  ]
 }

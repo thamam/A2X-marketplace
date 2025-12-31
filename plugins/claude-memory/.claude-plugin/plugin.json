@@ -15,9 +15,5 @@
     "mcp",
     "vector-search",
     "session-management"
-  ],
-  "agents": "./agents/",
-  "skills": "./skills/",
-  "commands": "./commands/",
-  "hooks": "./hooks/hooks.json"
+  ]
 }
