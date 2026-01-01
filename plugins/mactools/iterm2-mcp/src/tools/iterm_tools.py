@@ -188,7 +188,7 @@ async def create_iterm_tab(args: Dict[str, Any]) -> Dict[str, Any]:
 
 
 async def send_to_session(args: Dict[str, Any]) -> Dict[str, Any]:
-    """Send text to a session."""
+    """Send text to a session with auto-detection of Claude Code sessions."""
     try:
         parsed = SendToSessionArgs(**args)
         manager = get_session_manager()
@@ -209,7 +209,34 @@ async def send_to_session(args: Dict[str, Any]) -> Dict[str, Any]:
             "session_id": parsed.session_id,
         }
 
-        if session and session.controlled_by != ControlMode.CLAUDE:
+        # Auto-detect Claude Code and submit with \r
+        auto_submitted = False
+        if session and session.iterm_session_id:
+            from ..iterm_controller import get_controller
+            controller = await get_controller()
+
+            import iterm2
+            app_session = controller.app.get_session_by_id(session.iterm_session_id)
+            if app_session:
+                try:
+                    content = await app_session.async_get_screen_contents()
+                    # Check last few lines for Claude Code indicators
+                    screen_text = ""
+                    for i in range(max(0, content.number_of_lines - 5), content.number_of_lines):
+                        line = content.line(i)
+                        screen_text += line.string.lower()
+
+                    # Detect Claude Code session
+                    if "claude" in screen_text or ">>" in screen_text or "anthropic" in screen_text:
+                        # Auto-submit the command
+                        await manager.send_to_session(session_id, "\r")
+                        auto_submitted = True
+                        result["auto_submitted"] = True
+                        result["message"] = "Text sent and auto-submitted (Claude Code detected)"
+                except Exception as e:
+                    logger.debug(f"Could not auto-detect Claude session: {e}")
+
+        if not auto_submitted and session and session.controlled_by != ControlMode.CLAUDE:
             result["warning"] = (
                 f"Session is in {session.controlled_by.value} mode. "
                 f"User may also be typing commands."
@@ -703,7 +730,11 @@ TOOLS: List[Dict[str, Any]] = [
     },
     {
         "name": "send_to_session",
-        "description": "Send text or commands to an active session.",
+        "description": (
+            "Send text or commands to an active session. "
+            "Automatically detects Claude Code sessions and submits with Enter (\\r). "
+            "For non-Claude sessions, just sends the text without submitting."
+        ),
         "inputSchema": SendToSessionArgs.model_json_schema(),
         "handler": send_to_session,
     },
