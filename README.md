@@ -12,9 +12,9 @@ Add this marketplace to Claude Code:
 
 ## Available Plugins
 
-### thh10x (v1.0.0)
+### mactools (v1.0.0)
 
-Advanced terminal control and automation toolkit featuring the iTerm2 MCP server.
+macOS terminal automation with **bundled iTerm2 MCP server** for command execution, session management, and collaborative debugging.
 
 **Features:**
 - 🖥️ **Direct iTerm2 Control** - Create tabs, send commands, and manage sessions
@@ -23,39 +23,7 @@ Advanced terminal control and automation toolkit featuring the iTerm2 MCP server
 - 🔧 **Session Persistence** - tmux integration for long-running processes
 - 🤖 **Terminal Automation** - Automated test execution, build monitoring, and workflows
 - 🐛 **Collaborative Debug** - Interactive debugging sessions with user handoff
-
-**Install:**
-```bash
-/plugin install thh10x@A2X
-```
-
-**Quick Start:**
-```bash
-/create-terminal npm test       # Create terminal and run tests
-/shared-session debug           # Create collaborative debugging session
-```
-
-**Requirements:**
-- iTerm2 with Python API enabled (Preferences > General > Magic)
-- Python 3.9+
-- iTerm2 MCP server from `/Users/tomerhamam/personal/projects/rmt-iterm2`
-- Optional: `tmux` for shared sessions (`brew install tmux`)
-
-[Full Documentation →](./plugins/thh10x/README.md)
-
----
-
-### mactools (v1.0.0)
-
-macOS terminal automation with iTerm2 MCP server for command execution and session management.
-
-**Features:**
-- 🖥️ **Terminal Creation** - Create iTerm2 tabs with custom commands
-- 📊 **Output Monitoring** - Read terminal output with pagination
-- 🔄 **Session Management** - Track and manage multiple sessions
-- 🤝 **tmux Integration** - Shared sessions for collaboration
-- 🤖 **Terminal Automation** - Automated testing and build monitoring
-- 🐛 **Collaborative Debug** - Interactive debugging with user handoff
+- 📦 **Self-Contained** - iTerm2 MCP server bundled inside plugin (no external dependencies!)
 
 **Install:**
 ```bash
@@ -63,58 +31,24 @@ macOS terminal automation with iTerm2 MCP server for command execution and sessi
 ```
 
 **Quick Start:**
-```
-"Create a new terminal and run npm test"
-"Create a shared debugging session"
-"Monitor the build process"
+```bash
+/terminal npm test              # Create terminal and run tests
+/shared-session debug           # Create collaborative debugging session
 ```
 
 **Requirements:**
 - iTerm2 with Python API enabled (Preferences > General > Magic)
 - Python 3.9+
-- iTerm2 MCP server installed
 - Optional: `tmux` for shared sessions (`brew install tmux`)
 
 **Setup:**
 ```bash
-# Install iTerm2 MCP server
-cd /Users/tomerhamam/personal/projects/rmt-iterm2
+# Install Python dependencies for iTerm2 MCP
+cd ~/.claude-code/plugins/mactools/iterm2-mcp
 pip3 install -e .
 ```
 
 [Full Documentation →](./plugins/mactools/README.md)
-
----
-
-### iterm2-control (v1.0.0)
-
-Bidirectional iTerm2 terminal control with seamless user handoff via tmux.
-
-**Features:**
-- 🖥️ **Terminal Creation** - Spawn new iTerm2 tabs with commands
-- 📊 **Output Monitoring** - Read terminal output with pagination
-- 🔄 **Bidirectional Control** - Switch control between Claude and user
-- 🤝 **tmux Integration** - Shared sessions for collaboration
-- 🐛 **Interactive Debugging** - Create debugging sessions for user attachment
-
-**Install:**
-```bash
-/plugin install iterm2-control@A2X
-```
-
-**Quick Start:**
-```bash
-/create-terminal npm test       # Run tests and monitor
-/shared-session debug           # Create collaborative session
-/list-terminals                 # Show all active sessions
-```
-
-**Requirements:**
-- iTerm2 with Python API enabled (Preferences > General > Magic)
-- Python packages: `iterm2`, `mcp`, `pydantic`
-- Optional: `tmux` for shared sessions (`brew install tmux`)
-
-[Full Documentation →](./plugins/iterm2-control/README.md)
 
 ---
 

@@ -3,8 +3,10 @@
     "iterm2": {
       "command": "python3",
       "args": ["-m", "src.server"],
-      "cwd": "/Users/tomerhamam/personal/projects/rmt-iterm2",
-      "env": {}
+      "cwd": "${CLAUDE_PLUGIN_ROOT}/iterm2-mcp",
+      "env": {
+        "PYTHONPATH": "${CLAUDE_PLUGIN_ROOT}/iterm2-mcp"
+      }
     }
   }
 }
