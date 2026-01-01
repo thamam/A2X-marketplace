@@ -737,7 +737,7 @@ TOOLS: List[Dict[str, Any]] = [
     {
         "name": "list_sessions",
         "description": "List all active terminal sessions with their status.",
-        "inputSchema": {},
+        "inputSchema": {"type": "object", "properties": {}},
         "handler": list_sessions,
     },
     {
