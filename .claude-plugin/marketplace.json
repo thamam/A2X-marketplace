@@ -27,6 +27,18 @@
       "source": "./plugins/claude-memory",
       "version": "1.0.0",
       "description": "Persistent memory management for Claude Code with conversation history, knowledge base, and semantic search"
+    },
+    {
+      "name": "iterm2-control",
+      "source": "./plugins/iterm2-control",
+      "version": "1.0.0",
+      "description": "Bidirectional iTerm2 terminal control with seamless user handoff via tmux"
+    },
+    {
+      "name": "thh10x",
+      "source": "./plugins/thh10x",
+      "version": "1.0.0",
+      "description": "Advanced terminal control and automation toolkit featuring the iTerm2 MCP server"
     }
   ]
 }
